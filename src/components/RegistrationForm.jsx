@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./RegistrationForm.css";
 
+const API_BASE = import.meta.env.VITE_API_URL || "";
 const EMPTY_FORM = { name: "", email: "", specialty: "" };
 
 function RegistrationForm() {
@@ -80,7 +81,7 @@ function RegistrationForm() {
 
     try {
       // "fetch" é a função do browser para fazer HTTP requests.
-      const response = await fetch("/api/register", {
+      const response = await fetch(`${API_BASE}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form), // Converter o JS para string de JSON.
