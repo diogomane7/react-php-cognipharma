@@ -1,0 +1,90 @@
+/* Variables */
+:root {
+  /* Brand colours */
+  --color-primary: #212566; /* dark navy — main brand colour */
+  --color-secondary: #2d5497; /* medium blue */
+  --color-accent: #3db5f2; /* light blue — CTAs and highlights */
+
+  /* Neutral palette */
+  --color-bg: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text-muted: #64748b;
+  --color-text: #334155;
+  --color-heading: #0f172a;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-px: clamp(1rem, 4vw, 2rem);
+
+  /* Reusable values */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-card: 0 4px 24px rgba(33, 37, 102, 0.08);
+  --transition: 0.3s ease;
+}
+
+/* Browser Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* texto mais definido em macOS */
+}
+
+img {
+  display: block; /* remove o espaçamento abaixo de imagens inline */
+  max-width: 100%; /* imagens nunca ultrapassam o container */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit; /* Faz os butões herdarem a font do elemento pai */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* Scroll fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
