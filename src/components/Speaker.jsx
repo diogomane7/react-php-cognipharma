@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import "./speaker.css";
+import "./Speaker.css";
 
 function speaker() {
   const sectionRef = useRef(null);
